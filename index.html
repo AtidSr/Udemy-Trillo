@@ -12,6 +12,16 @@
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 
     <title>trillo &mdash; Your all-in-one booking app</title>
+
+    <script>
+      const toggleMessage = () =>{
+        if (document.querySelector(".user-nav__chat").classList.length > 1) {
+          document.querySelector(".user-nav__chat").classList.remove("hide")
+          return
+        } 
+        document.querySelector(".user-nav__chat").classList.add("hide")
+      }
+    </script>
   </head>
   <body>
     <div class="container">
@@ -38,11 +48,50 @@
             <span class="user-nav__notification"> 7 </span>
           </div>
 
-          <div class="user-nav__icon-box">
+          <div class="user-nav__icon-box" onclick="toggleMessage()">
             <svg class="user-nav__icon">
               <use xlink:href="img/sprite.svg#icon-chat"></use>
             </svg>
-            <span class="user-nav__notification"> 13 </span>
+            <span class="user-nav__notification""> 13 </span>
+            <div class="user-nav__chat hide">
+
+              <h2 class="user-nav__message">Message</h2>
+              <div class="user-nav__chat-box">
+                <img
+                  src="img/user.jpg"
+                  alt="User photo"
+                  class="user-nav__chat-photo"
+                />
+                <div class="user-nav__chat-detail">
+                  <span class="user-nav__username">Jonas</span>
+                  <span class="user-nav__text">Hello</span>
+                </div>
+              </div>
+
+              <div class="user-nav__chat-box">
+                <img
+                  src="img/user-1.jpg"
+                  alt="User photo"
+                  class="user-nav__chat-photo"
+                />
+                <div class="user-nav__chat-detail">
+                  <span class="user-nav__username">Nick</span>
+                  <span class="user-nav__text">Hello</span>
+                </div>
+              </div>
+              <div class="user-nav__chat-box">
+                <img
+                  src="img/user-2.jpg"
+                  alt="User photo"
+                  class="user-nav__chat-photo"
+                />
+                <div class="user-nav__chat-detail">
+                  <span class="user-nav__username">Mary</span>
+                  <span class="user-nav__text">Hello</span>
+                </div>
+              </div>
+
+            </div>
           </div>
           <div class="user-nav__user">
             <img
